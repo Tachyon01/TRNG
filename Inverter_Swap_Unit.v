@@ -1,6 +1,6 @@
-module ISU(Outm, Outn, Ai, Aj, Bi, Bj);
-output Outm, Outn;
-input Ai, Aj, Bi, Bj;
+module ISU(Ai, Aj, Bi, Bj, Outm, Outn);
+output Ai, Aj;
+input Bi, Bj, Outm, Outn;
 wire x,y;
 mux muxBL(x,Bi,Bj,Outn);
 mux muxBR(y,Bj,Bi,Outn);
@@ -12,8 +12,8 @@ module mux(y,in1,in0,sel);
 output reg y;
 input in1, in0, sel;
 always@(in1,in0,sel)
-  case(sel)
-  1'b0: y=in0;
-  1'b1: y=in1;
-  endcase
+ case(sel)
+ 1'b0: y=in0;
+ 1'b1: y=in1;
+ endcase
 endmodule
