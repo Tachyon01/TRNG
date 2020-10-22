@@ -1,8 +1,8 @@
-module smfro_rng(A, clk);
+module smfro_rng(A, clk, Out);
 input [15:0] A;
 input clk;
 wire [15:0] B;
-reg [15:0] Out;
+output [15:0] Out;
 
 xor16_1 xor16(B[15],{1'b0,A[14:0]});
 xor16_1 xor15(B[14],{2'b00,A[13:1],1'b0});
